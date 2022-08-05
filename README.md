@@ -10,6 +10,7 @@ UIWindow* mainWindow;
 
   SecureView *secureView = [SecureView new];
   secureView.frame = mainWindow.frame;
+  [secureView setSecure:YES];
   [mainWindow addSubview:secureView];
 }
 ```
