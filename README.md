@@ -1,19 +1,17 @@
 # SecureView
-Enables you to hide ur UIViews and make them screen/screen shot proof. objective c/c++ only
+Enables you to hide ur UIViews and make them screen recording/screenshot proof.
 
 # Usage 
 ```obj-c
-UIWindow* mainWindow;
-
 - (void) setup {
-  mainWindow = [[UIApplication sharedApplication] windows].lastObject;
+  UIWindow* mainWindow = [[UIApplication sharedApplication] windows].lastObject;
 
-  SecureView *secureView = [SecureView new];
-  secureView.frame = mainWindow.frame;
-  [secureView setSecure:YES];
-  [mainWindow addSubview:secureView];
+  UIView *view = [[UIView alloc] init];
+  view.frame = mainWindow.frame;
+  [view hideViewFromCapture:YES]; // toggleable
+  [mainWindow addSubview:view];
 }
 ```
 
-based on: 
-https://stackoverflow.com/questions/18680028/prevent-screen-capture-in-an-ios-app
+based on:
+https://nsantoine.dev/posts/CALayerCaptureHiding
